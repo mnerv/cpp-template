@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.12)
 project(helloworld)
 
 # output location
@@ -21,7 +21,12 @@ else()
 endif()
 
 # source files and includes
-file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/src/*.cpp")
-add_executable(${PROJECT_NAME} ${SRC_FILES})
+file(GLOB_RECURSE TARGET_SOURCE_FILES
+    "${PROJECT_SOURCE_DIR}/src/*.h"
+    "${PROJECT_SOURCE_DIR}/src/*.hpp"
+    "${PROJECT_SOURCE_DIR}/src/*.cpp"
+)
+add_executable(${PROJECT_NAME} ${TARGET_SOURCE_FILES})
 include_directories(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/src")
+source_group(TREE "${CMAKE_CURRENT_LIST_DIR}" FILES ${TARGET_SOURCE_FILES})
 
