@@ -5,6 +5,7 @@ project(helloworld VERSION 0.0.0)
 if (NOT WORKSPACE_LOCATION)
     set(WORKSPACE_LOCATION ".")
 endif()
+# default build type
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "debug")
 endif()
@@ -19,9 +20,18 @@ set(CMAKE_C_STANDARD 17)
 
 # warnings and errors
 if (NOT MSVC)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wconversion -Werror")
+    string(JOIN " " CMAKE_CXX_FLAGS
+        "-Wall"
+        "-Wextra"
+        "-Wconversion"
+        "-Wpedantic"
+        "-Werror"
+    )
 else()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4 /WX")
+    string(JOIN " " CMAKE_C_FLAGS
+        "/W4"
+        "/WX"
+    )
 endif()
 
 # source files and includes
