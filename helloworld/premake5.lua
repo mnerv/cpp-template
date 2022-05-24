@@ -35,11 +35,15 @@ project 'helloworld'
   filter 'system:macosx'
     system 'macosx'
 
-  filter 'system:linx'
+  filter 'system:linux'
     system 'linux'
 
   filter 'system:windows'
     system 'windows'
+    buildoptions {
+      '/W4',
+      '/WX',
+    }
 
   filter 'configurations:debug'
     symbols 'On'
