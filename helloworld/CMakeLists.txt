@@ -21,6 +21,7 @@ set(CMAKE_C_STANDARD 17)
 # warnings and errors
 if (NOT MSVC)
     string(JOIN " " CMAKE_CXX_FLAGS
+        ${CMAKE_CXX_FLAGS}
         "-Wall"
         "-Wextra"
         "-Wconversion"
@@ -28,7 +29,8 @@ if (NOT MSVC)
         "-Werror"
     )
 else()
-    string(JOIN " " CMAKE_C_FLAGS
+    string(JOIN " " CMAKE_CXX_FLAGS
+        ${CMAKE_CXX_FLAGS}
         "/W4"
         "/WX"
     )
