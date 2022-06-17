@@ -38,6 +38,8 @@ file(GLOB_RECURSE TARGET_SOURCE_FILES
     "${PROJECT_SOURCE_DIR}/src/*.cpp"
 )
 add_executable(${PROJECT_NAME} ${TARGET_SOURCE_FILES})
-include_directories(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/src")
+target_include_directories(${PROJECT_NAME} PRIVATE
+    "${PROJECT_SOURCE_DIR}/src"
+)
 source_group(TREE "${CMAKE_CURRENT_LIST_DIR}" FILES ${TARGET_SOURCE_FILES})
 
