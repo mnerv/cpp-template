@@ -21,6 +21,7 @@ if (NOT MSVC)
         "-Wextra"
         "-Wconversion"
         "-Wpedantic"
+        "-Wshadow"
         "-Werror"
     )
 else()
