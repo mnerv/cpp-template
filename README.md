@@ -8,6 +8,8 @@ to use the project as is, but it can also be collapse into just a one
 
 ## CMake
 
+Checkout [fractal](https://github.com/mnerv/fractals) repository for usage with libraries.
+
 **cmake**
 
 ```
