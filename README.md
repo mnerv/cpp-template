@@ -30,6 +30,14 @@ cmake -S . -Bbuild -GNinja
 ninja -C build
 ```
 
+## meson
+
+```
+meson setup build
+```
+
+Use `ninja` the same as cmake.
+
 ## Premake
 
 Generate `Makefile` with `premake5`
