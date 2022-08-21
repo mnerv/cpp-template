@@ -6,6 +6,7 @@ lib
 # CMake
 build
 cmake-build-*
+meson-build-*
 
 # Xcode
 *.xcworkspace
