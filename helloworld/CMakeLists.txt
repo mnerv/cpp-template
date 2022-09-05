@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(helloworld VERSION 0.0.0)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # # output location
 # if (NOT DEFINED WORKSPACE_LOCATION)
